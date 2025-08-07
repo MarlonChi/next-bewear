@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { authClient } from "@/lib/auth-client";
 
+import { Cart } from "./cart";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import {
@@ -79,6 +80,7 @@ export const Header = () => {
             </div>
           </SheetContent>
         </Sheet>
+        <Cart />
       </div>
     </header>
   );
