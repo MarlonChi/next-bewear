@@ -9,24 +9,21 @@ import { categoryTable, productTable } from "@/db/schema";
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
 }
+
 const CategoryPage = async ({ params }: CategoryPageProps) => {
   const { slug } = await params;
-
   const category = await db.query.categoryTable.findFirst({
     where: eq(categoryTable.slug, slug),
   });
-
   if (!category) {
     return notFound();
   }
-
   const products = await db.query.productTable.findMany({
     where: eq(productTable.categoryId, category.id),
     with: {
       variants: true,
     },
   });
-
   return (
     <>
       <Header />
@@ -37,7 +34,7 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
             <ProductItem
               key={product.id}
               product={product}
-              textContainerClassname="max-w-full"
+              textContainerClassName="max-w-full"
             />
           ))}
         </div>

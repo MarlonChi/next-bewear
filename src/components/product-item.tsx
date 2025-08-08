@@ -9,10 +9,10 @@ interface ProductItemProps {
   product: typeof productTable.$inferSelect & {
     variants: (typeof productVariantTable.$inferSelect)[];
   };
-  textContainerClassname?: string;
+  textContainerClassName?: string;
 }
 
-const ProductItem = ({ product, textContainerClassname }: ProductItemProps) => {
+const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
   const firstVariant = product.variants[0];
   return (
     <Link
@@ -30,7 +30,7 @@ const ProductItem = ({ product, textContainerClassname }: ProductItemProps) => {
       <div
         className={cn(
           "flex max-w-[200px] flex-col gap-1",
-          textContainerClassname,
+          textContainerClassName,
         )}
       >
         <p className="truncate text-sm font-medium">{product.name}</p>
