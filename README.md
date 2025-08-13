@@ -28,7 +28,7 @@ Uma loja de roupas online moderna construída com Next.js, oferecendo uma experi
 
 ## 🚀 Live
 
-Acesse <next-bewear.vercel.app/> para visualizar a aplicação.
+Acesse <https://next-bewear.vercel.app/> para visualizar a aplicação.
 
 ## 📱 Screenshots
 
